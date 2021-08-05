@@ -34,14 +34,12 @@ export default function App() {
       <SafeAreaView>
         <Text style={styles.customText}>Hi Class! 🐓 🌎</Text>
         <StatusBar style='auto' />
-        <ImageBackground
-          source={image}
-          resizeMode='cover'
-          style={{ ...styles.container, flex: 1,  }}
-        >
-          {students.map((student) => {
-            return <Box entireStudent={student} /> // passing entire object to box
-          })}
+        <ImageBackground source={image} resizeMode='cover' style={styles.container}>
+          {/* <View style={styles.container}> */}
+            {students.map((student) => {
+              return <Box entireStudent={student} /> // passing entire object to box
+            })}
+          {/* </View> */}
         </ImageBackground>
       </SafeAreaView>
     </ScrollView>
