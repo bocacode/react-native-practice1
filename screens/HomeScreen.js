@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, Button, ScrollView, SafeAreaView, StatusBar, ImageBackground, Image } from 'react-native'
 
 import Box from './../components/Box'
@@ -35,7 +35,13 @@ export default function Home({ navigation }) {
               return (
                 <>
                   <Box key={singleRestaurant.id} item={singleRestaurant} />
-                  <Button title='Details' color='#841584' onPress={routeToRestaurant} />
+                  <Button
+                    title='Details'
+                    color='#841584'
+                    onPress={() => {
+                      navigation.navigate('RestaurantDetails', { restaurant: singleRestaurant })
+                    }}
+                  />
                 </>
               )
             })}

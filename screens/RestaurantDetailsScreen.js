@@ -1,21 +1,15 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, Image, Button} from 'react-native'
 
-export default function RestaurantDetails() {
+export default function RestaurantDetails({route, navigation}) {
+  const {address, id, name, photoUrl} = route.params.restaurant
+  
   return (
     <View>
-      <Text> this is Restaurant details</Text>
+      <Image source={{uri:photoUrl}} style={{width: '100%', height: 200}} />
+      <Text> this is Restaurant details {name}</Text>
+      <Text>  {address}</Text>
+      <Button title='Add New Restaurant' onPress={() => navigation.navigate('AddNewRestaurant')} />
     </View>
-    // const {name, photoUrl, rating, address} = item
-    // console.log('this is props =>>>', address)
-
-    // return (
-    //   <View style={styles.box}>
-    //     <Text>{name}</Text>
-    //     <Text>{address}</Text>
-    //     <Text>{rating}</Text>
-
-    //   </View>
-    // )
   )
 }
